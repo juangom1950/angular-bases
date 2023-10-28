@@ -8,12 +8,15 @@ import { DbzService } from '../services/dbz.service';
 })
 export class MainPageComponent  {
 
+  // Here we are injecting the service
   constructor( private dbzService: DbzService ) {}
 
+  // With this property you have access to the outside world
   get characters(): Character[] {
     return [...this.dbzService.characters];
   }
 
+  // Here we are accessing the private parameter with these methods
   onDeleteCharacter( id: string ):void {
     this.dbzService.deleteCharacterById( id );
   }

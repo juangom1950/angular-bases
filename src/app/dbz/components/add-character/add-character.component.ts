@@ -22,6 +22,7 @@ export class AddCharacterComponent {
 
     this.onNewCharacter.emit(this.character);
 
+    // Reset the character object
     this.character = { name: '', power: 0 };
   }
 

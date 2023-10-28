@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { Character } from '../interfaces/character.interface';
 
 @Injectable({
+  // This is going to do a singleton in the whole application
   providedIn: 'root'
 })
 export class DbzService {
@@ -26,6 +27,7 @@ export class DbzService {
 
   addCharacter( character: Character ):void {
 
+    // Here we are using spread operator
     const newCharacter: Character = { id: uuid(), ...character };
 
     this.characters.push(newCharacter);
